@@ -1,3 +1,4 @@
+#!/bin/bash
 #SBATCH --job-name=scenario_d
 #SBATCH -A m3930
 #SBATCH --qos=debug
