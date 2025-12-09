@@ -1,10 +1,11 @@
-#!/bin/bash
 #SBATCH --job-name=scenario_d
+#SBATCH -A m3930
+#SBATCH --qos=debug
+#SBATCH --constraint=cpu
 #SBATCH --nodes=1
-#SBATCH --ntasks=1
+#SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=32
 #SBATCH --time=00:10:00
-#SBATCH --mem=8G
 #SBATCH --output=logs/scenario_d_%j.out
 #SBATCH --error=logs/scenario_d_%j.err
 
@@ -61,7 +62,7 @@ echo ""
 echo "========================================"
 echo "Running Scenario D..."
 echo "========================================"
-time ./scenario_d data/subset_500.csv output/ $SLURM_CPUS_PER_TASK
+time ./scenario_d subset_500.csv output/ $SLURM_CPUS_PER_TASK
 
 # Check if execution succeeded
 if [ $? -eq 0 ]; then

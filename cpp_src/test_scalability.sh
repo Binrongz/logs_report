@@ -26,7 +26,7 @@ for threads in 1 2 4 8 16 32; do
     output_dir="output/scalability/${threads}threads/"
     mkdir -p $output_dir
     
-    ./scenario_d data/subset_500.csv $output_dir $threads
+    ./scenario_d subset_500.csv $output_dir $threads
     
     echo "Results saved to: $output_dir"
     sleep 1
